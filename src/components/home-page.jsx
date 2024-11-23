@@ -1,36 +1,40 @@
-import { ScrollArea } from '../components/ui/scroll-area'
+import React from 'react';
 
-export function HomePage() {
+export default function HomePage() {
   const projects = [
     {
       title: "Virtual Clubs",
       company: "Sport Heroes",
-      image: "/images/virtual-clubs.jpg", // Update with your image path
+      image: "/images/virtual-clubs.jpg",
       href: "/virtual-clubs"
     },
-    // ... other projects
-  ]
+    {
+      title: "Benchmarking",
+      company: "United Heroes",
+      image: "/images/benchmarking.jpg",
+      href: "/benchmarking"
+    },
+    // Add other projects here
+  ];
 
   return (
     <main className="flex min-h-screen flex-col">
       {/* Auto-scrolling Gallery */}
-      <section className="w-full py-12">
-        <ScrollArea className="w-full whitespace-nowrap rounded-lg border">
-          <div className="flex w-max animate-scroll-left space-x-4 p-4">
-            {[...projects, ...projects].map((project, i) => (
-              <div
-                key={i}
-                className="relative aspect-[16/10] w-[600px] shrink-0 overflow-hidden rounded-lg"
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
-        </ScrollArea>
+      <section className="w-full py-12 overflow-hidden">
+        <div className="flex animate-scroll-left space-x-4 p-4">
+          {[...projects, ...projects].map((project, i) => (
+            <div
+              key={i}
+              className="relative aspect-[16/10] w-[600px] shrink-0 overflow-hidden rounded-lg"
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="h-full w-full object-cover"
+              />
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Description */}
@@ -77,6 +81,6 @@ export function HomePage() {
         </div>
       </section>
     </main>
-  )
+  );
 }
 

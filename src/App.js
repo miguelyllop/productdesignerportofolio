@@ -1,7 +1,8 @@
-import { ThemeProvider } from './components/theme-provider'
-import { SiteHeader } from './components/site-header'
-import { SiteFooter } from './components/site-footer'
-import { HomePage } from './components/home-page'
+import React from 'react';
+import { ThemeProvider } from './components/components_theme-provider';
+import { SiteHeader } from './components/components_site-header';
+import { SiteFooter } from './components/components_site-footer';
+import HomePage from './components/home-page';
 
 function App() {
   return (
@@ -12,8 +13,8 @@ function App() {
         <SiteFooter />
       </div>
     </ThemeProvider>
-  )
+  );
 }
 
-export default App
+export default App;
 
