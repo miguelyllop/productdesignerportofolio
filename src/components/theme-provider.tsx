@@ -1,9 +1,10 @@
-import React from 'react';
+// ThemeProvider.jsx
+import React, { useEffect } from 'react';
 
 export function ThemeProvider({ children, defaultTheme = 'system', enableSystem = true }) {
   const [theme, setTheme] = React.useState(defaultTheme);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const root = window.document.documentElement;
     root.classList.remove('light', 'dark');
     
@@ -21,4 +22,3 @@ export function ThemeProvider({ children, defaultTheme = 'system', enableSystem 
     </div>
   );
 }
-

@@ -2,32 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    /* ... other CSS variables ... */
-  }
-  
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    /* ... other dark mode variables ... */
-  }
-}
-
 @layer utilities {
   .animate-scroll-left {
     animation: scroll-left 40s linear infinite;
   }
+
+  @keyframes scroll-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .prose .lead {
+    @apply text-xl text-muted-foreground;
+  }
 }
- 
-@keyframes scroll-left {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+
+/* Smooth transitions for dark mode */
+* {
+  @apply transition-colors duration-200;
 }
 

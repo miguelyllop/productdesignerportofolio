@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ModeToggle } from './components/ModeToggle';
 
 export function SiteHeader() {
+  const [theme, setTheme] = useState('system');  // El tema por defecto (puedes configurarlo a 'light' o 'dark')
+
+  const handleThemeToggle = () => {
+    setTheme(prevTheme => (prevTheme === 'dark' ? 'light' : 'dark'));
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center">
@@ -17,10 +24,10 @@ export function SiteHeader() {
             >
               About
             </a>
+            <ModeToggle currentTheme={theme} onToggle={handleThemeToggle} />
           </nav>
         </div>
       </div>
     </header>
   );
 }
-

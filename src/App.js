@@ -7,7 +7,7 @@ import './App.css';
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="system" enableSystem>
+    <ThemeProvider defaultTheme="dark" enableSystem>
       <div className="relative flex min-h-screen flex-col">
         <SiteHeader />
         <HomePage />
