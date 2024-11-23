@@ -1,4 +1,4 @@
-import React from 'react';
+import Link from "next/link"
 
 export function SiteFooter() {
   return (
@@ -10,25 +10,23 @@ export function SiteFooter() {
           </p>
         </div>
         <div className="flex gap-4">
-          <a
+          <Link
             href="https://read.cv/miguellpp"
             target="_blank"
-            rel="noopener noreferrer"
             className="text-sm text-muted-foreground underline-offset-4 hover:underline"
           >
             CV
-          </a>
-          <a
+          </Link>
+          <Link
             href="https://www.linkedin.com/in/miguel-luis-152046163/"
             target="_blank"
-            rel="noopener noreferrer"
             className="text-sm text-muted-foreground underline-offset-4 hover:underline"
           >
             LinkedIn
-          </a>
+          </Link>
         </div>
       </div>
     </footer>
-  );
+  )
 }
 

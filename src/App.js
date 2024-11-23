@@ -1,8 +1,9 @@
 import React from 'react';
-import { ThemeProvider } from './components/components_theme-provider';
-import { SiteHeader } from './components/components_site-header';
-import { SiteFooter } from './components/components_site-footer';
+import { ThemeProvider } from './components/theme-provider';
+import { SiteHeader } from './components/site-header';
+import { SiteFooter } from './components/site-footer';
 import HomePage from './components/home-page';
+import './App.css';
 
 function App() {
   return (
