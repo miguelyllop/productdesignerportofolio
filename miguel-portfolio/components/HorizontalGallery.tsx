@@ -21,7 +21,7 @@ export default function HorizontalGallery() {
       },
     },
     created: (slider) => {
-      let touchTimeout;
+      let touchTimeout: NodeJS.Timeout | undefined;
       let wheelActive = false;
       let position = { x: 0, y: 0 };
 
