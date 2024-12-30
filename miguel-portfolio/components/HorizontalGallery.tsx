@@ -57,7 +57,7 @@ export default function HorizontalGallery() {
       };
 
       // The actual wheel event handler
-      const eventWheel = (e) => {
+      const eventWheel = (e: WheelEvent) => {
         // Allow horizontal scroll with more horizontal movement than vertical
         if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
           e.preventDefault();
