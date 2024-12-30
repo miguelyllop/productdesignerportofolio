@@ -4,6 +4,8 @@ const nextConfig = {
   images: {
     domains: ['placeholder.com', 'placehold.co', 'picsum.photos'],
   },
+  basePath: '/productdesignerportofolio',  // Use the repo name here
+  assetPrefix: '/productdesignerportofolio',  // Same here
 }
 
-module.exports = nextConfig
+module.exports = nextConfig;

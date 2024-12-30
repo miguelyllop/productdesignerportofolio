@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "homepage": "https://github.com/miguelyllop/productdesignerportofolio.git",
   "private": true,
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d .next",
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint"
+},
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.1",
     "@radix-ui/react-alert-dialog": "^1.1.2",
@@ -44,6 +44,7 @@
     "@typescript-eslint/eslint-plugin": "^8.18.2",
     "@typescript-eslint/parser": "^8.18.2",
     "eslint": "^9.17.0",
-    "eslint-config-next": "^15.1.3"
+    "eslint-config-next": "^15.1.3",
+    "gh-pages": "^6.2.0"
   }
 }
