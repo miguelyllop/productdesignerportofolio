@@ -8,9 +8,10 @@ interface PageProps {
   params: {
     slug: string;
   };
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
-export default function ProjectPage({ params }: PageProps) {
+export default async function ProjectPage({ params, searchParams }: PageProps) {
   // Find the project based on the slug
   const project = projects.find((p) => p.slug === params.slug);
 
