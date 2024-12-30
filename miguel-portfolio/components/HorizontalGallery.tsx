@@ -41,18 +41,18 @@ export default function HorizontalGallery() {
       };
 
       // Start wheel scroll event
-      const wheelStart = (e) => {
+      const wheelStart = (e: WheelEvent) => {
         position = { x: e.pageX, y: e.pageY };
         dispatch(e, 'ksDragStart');
       };
 
       // Trigger the scroll action
-      const wheel = (e) => {
+      const wheel = (e: WheelEvent) => {
         dispatch(e, 'ksDrag');
       };
 
       // End of wheel scroll event
-      const wheelEnd = (e) => {
+      const wheelEnd = (e: WheelEvent) => {
         dispatch(e, 'ksDragEnd');
       };
 
