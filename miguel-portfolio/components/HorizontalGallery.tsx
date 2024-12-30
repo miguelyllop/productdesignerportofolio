@@ -104,7 +104,7 @@ export default function HorizontalGallery() {
         <div className="keen-slider__slide flex-shrink-0">
           <video
             src="/videos/video1.mov"
-            alt="Video 1"
+            title="Video 1"
             autoPlay
             loop
             muted
@@ -122,7 +122,7 @@ export default function HorizontalGallery() {
         <div className="keen-slider__slide flex-shrink-0">
           <video
             src="/videos/video2.mp4"
-            alt="Video 2"
+            title="Video 2"
             autoPlay
             loop
             muted
