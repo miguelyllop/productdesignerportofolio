@@ -1,32 +1,30 @@
 'use client';
 
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { projects } from '../../../data/projects'; // Asegúrate de que la ruta sea correcta
+import { projects } from '@/lib/projects';
 
 interface PageProps {
-  params: Promise<{
+  params: {
     slug: string;
-  }>;
-  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+  };
+  searchParams?: { [key: string]: string | string[] | undefined };
 }
 
-export default async function ProjectPage({ 
+export default function ProjectPage({ 
   params,
   searchParams 
 }: PageProps) {
-  const resolvedParams = await params;
   // Find the project based on the slug
-  const project = projects.find((p) => p.slug === resolvedParams.slug);
+  const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
     notFound();
   }
 
   return (
-    <article className="max-w-4xl mx-auto py-12 px-6">
+    <div className="container mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold mb-6">{project.title}</h1>
-      {/* Rest of your component */}
-    </article>
+      {/* Rest of your project page content */}
+    </div>
   );
 }

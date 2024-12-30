@@ -10,13 +10,13 @@ export default function AboutPage() {
         </p>
         <p>
           His design philosophy revolves around understanding user needs and translating them into 
-          functional and aesthetically pleasing designs. Miguel's expertise spans from initial concept 
+          functional and aesthetically pleasing designs. Miguel&apos;s expertise spans from initial concept 
           sketches to high-fidelity prototypes and final product implementations.
         </p>
         <p>
           When not designing, Miguel enjoys staying up-to-date with the latest design trends and 
           technologies, as well as collaborating with other designers and developers to push the 
-          boundaries of what's possible in product design.
+          boundaries of what&apos;s possible in product design.
         </p>
       </div>
     </div>

@@ -18,14 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="stylesheet" href="/tailwind.css" />
-      </head>
       <body className={`${inter.className} bg-gray-50 text-gray-900`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="min-h-screen">
             <Header />
-            <main className="flex-1 w-full">{children}</main> {/* Removed flex layout */}
+            <main className="flex-1 w-full">{children}</main>
             <Footer />
           </div>
         </ThemeProvider>
