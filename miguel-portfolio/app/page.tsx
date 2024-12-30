@@ -4,10 +4,16 @@ import HorizontalGallery from '@/components/HorizontalGallery'
 import Description from '@/components/Description'
 import ProjectIndex from '@/components/ProjectIndex'
 
+interface Project {
+  id: number;
+  title: string;
+  year: number;
+}
+
 export default function Home() {
-  const handleProjectClick = (projectId: string) => {
+  const handleProjectClick = (project: Project) => {
     // Add your click handling logic here
-    console.log(`Project clicked: ${projectId}`);
+    console.log(`Project clicked:`, project);
   };
 
   return (
