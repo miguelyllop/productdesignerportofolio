@@ -5,15 +5,18 @@ import { notFound } from 'next/navigation';
 import { projects } from '../../../data/projects'; // Asegúrate de que la ruta sea correcta
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
-  searchParams: { [key: string]: string | string[] | undefined };
+  }>;
+  searchParams?: { [key: string]: string | string[] | undefined };
 }
 
-export default async function ProjectPage({ params, searchParams }: PageProps) {
+export default async function ProjectPage({ 
+  params 
+}: PageProps) {
+  const resolvedParams = await params;
   // Find the project based on the slug
-  const project = projects.find((p) => p.slug === params.slug);
+  const project = projects.find((p) => p.slug === resolvedParams.slug);
 
   if (!project) {
     notFound();
