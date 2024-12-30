@@ -26,7 +26,7 @@ export default function HorizontalGallery() {
       let position = { x: 0, y: 0 };
 
       // Dispatch function for controlling wheel movement
-      const dispatch = (e, name) => {
+      const dispatch = (e: WheelEvent, name: string) => {
         position.x -= e.deltaX;
         position.y -= e.deltaY;
 
