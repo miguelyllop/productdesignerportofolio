@@ -2,18 +2,19 @@ import { notFound } from 'next/navigation';
 import { projects } from '@/lib/projects';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
-  searchParams?: { [key: string]: string | string[] | undefined };
+  }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-export default function ProjectPage({ 
+export default async function ProjectPage({ 
   params,
   searchParams 
 }: PageProps) {
+  const resolvedParams = await params;
   // Find the project based on the slug
-  const project = projects.find((p) => p.slug === params.slug);
+  const project = projects.find((p) => p.slug === resolvedParams.slug);
 
   if (!project) {
     notFound();
