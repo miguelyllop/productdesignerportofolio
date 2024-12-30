@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+./* Hover Preview */
+.hover-preview {
+  transition: transform 0.1s ease, opacity 0.1s ease;
+  opacity: 0.9;
+  transform: translate(-50%, -50%);
+  position: fixed; /* Ensure it's positioned outside the flow */
+  pointer-events: none; /* Prevent it from interfering with interactions */
+  z-index: 1000; /* Ensure it's on top of other content */
+}
+
+/* Project List Styling */
+.project-list {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0; /* Remove default padding */
+  margin: 0px;
+}
+
+/* Project Item Styling */
+.project-item {
+  cursor: pointer;
+  border-bottom: 0.5px solid #6a6a6a70; /* Border at the bottom of each item */
+  padding: 0px; /* Add padding for spacing */
+  margin: 0; /* Remove margin to avoid extra spacing */
+  display: flex; /* Align items horizontally */
+  justify-content: space-between; /* Push items to opposite sides */
+  align-items: center; /* Vertically center content */
+  position: relative; /* Allow absolute positioning for hover overlay */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Focus and Hover Effects for Project Item */
+.project-item:hover {
+  background-color: rgba(0, 0, 0, 0); /* Light blue background on hover */
+}
+
+/* Darken Non-Hovered Projects */
+.project-item.opacity-50 {
+  opacity: 0.5; /* Darken non-hovered projects */
+}
+
+/* Project Title and Year Alignment */
+.project-item h3 {
+  margin: 0; /* Remove default margin for h3 */
+  text-align: center; /* Center the title */
+  font-size: 0.9rem;
+}
+
+.project-item span {
+  font-size: 0.9rem;
+}
+
+/* Adjust the View Link styling */
+.project-item .view {
+  margin-left: auto; /* Push "view" to the right */
+  opacity: 1; /* Default opacity */
+  transition: opacity 0.2s ease; /* Smooth transition */
+}
+
+.project-item:hover .view {
+  opacity: 0.5; /* Change opacity on hover */
+}
+
+.project-item:first-child {
+  border-top: none; /* Remove top border for the first item */
+}
+
+.project-item:last-child {
+  border-bottom: none; /* Remove bottom border for the last item */
+}
+
+/* Sticky header with blurred background (on scroll) */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: all 0.5s ease-in-out;
+  background-color: rgba(255, 255, 255, 0); /* Transparent background initially */
+  backdrop-filter: blur(0px); /* No blur initially */
+  -webkit-backdrop-filter: blur(0px); /* Safari support */
+  border-bottom: 1px solid rgba(0, 0, 0, 0); /* Transparent border initially */
+}
+
+header.bg-scrolled {
+  background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+  backdrop-filter: blur(10px); /* Apply blur on scroll */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Optional: a subtle border */
+}
+
+/* Make sure content under the header stays properly positioned */
+main {
+  padding-top: 0rem; /* Adjust for header height */
+}
+
+/* Optional: Add smooth transitions for interactive elements like buttons */
+button, a {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Optional: Reset styles */
+* {
+  @apply border-border;
+}
+
+body {
+  @apply bg-background text-foreground;
+}
+
+/* Custom scrollbar utility */
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  /* Target only images and videos inside the keen-slider */
+.keen-slider img, .keen-slider video {
+  display: block;
+  width: 100%; /* Make sure the media fills the container width */
+  height: 100%; /* Make sure the media fills the container height */
+  object-fit: cover; /* The image/video will be cropped to fill the container */
+}
+
+/* Keen Slider container and layout */
+.keen-slider {
+  
+  display: flex;
+  flex-direction: row;
+  overflow: hidden; /* Hides overflow to ensure only visible slides are shown */
+  height: calc(100vh - 1.5vh);/* Full viewport height */
+  position: relative;
+
+}
+
+/* Each slide */
+.keen-slider__slide {
+   cursor: pointer; 
+  display: flex; /* Use flexbox to align content */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  max-width: 300px; /* Limit each slide's width to 300px */
+  height: 100vh; /* Full viewport height */
+  flex-shrink: 0; /* Prevents slides from shrinking */
+  scroll-snap-align: center; /* Center-aligns each slide */
+  box-sizing: border-box; /* Includes padding and border in the element’s total width and height */
+}
+
+}
