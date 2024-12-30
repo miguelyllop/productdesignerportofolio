@@ -1,10 +1,20 @@
 import { useState } from 'react';
 
-function ProjectIndex({ onProjectClick }) {
-  const [hoveredProject, setHoveredProject] = useState(null);
+interface Project {
+  id: number;
+  title: string;
+  year: number;
+}
+
+interface ProjectIndexProps {
+  onProjectClick: (project: Project) => void;
+}
+
+function ProjectIndex({ onProjectClick }: ProjectIndexProps) {
+  const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
 
   // Sample projects (replace with your actual data)
-  const projects = [
+  const projects: Project[] = [
     { id: 1, title: 'Project 1', year: 2023 },
     { id: 2, title: 'Project 2', year: 2022 },
     { id: 3, title: 'Project 3', year: 2021 },
