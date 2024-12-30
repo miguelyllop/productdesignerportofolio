@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { projects } from '@/lib/projects';
+import { projects } from '@/data/projects';
 
 interface PageProps {
   params: Promise<{
