@@ -8,11 +8,12 @@ interface PageProps {
   params: Promise<{
     slug: string;
   }>;
-  searchParams?: { [key: string]: string | string[] | undefined };
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
 export default async function ProjectPage({ 
-  params 
+  params,
+  searchParams 
 }: PageProps) {
   const resolvedParams = await params;
   // Find the project based on the slug
