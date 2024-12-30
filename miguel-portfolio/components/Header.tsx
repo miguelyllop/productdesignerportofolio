@@ -56,7 +56,7 @@ export default function Header() {
           </Link>
           <Button
             variant="ghost"
-            size="icon"
+            size="sm"
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
           >
             {theme === 'dark' ? (
